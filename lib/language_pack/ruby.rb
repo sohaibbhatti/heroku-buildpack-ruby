@@ -378,9 +378,19 @@ ERROR
     end
   end
 
+
+  def raise_on_bad_gems!
+    if gem_is_bundled?("sqlite3")
+      puts "Cannot install sqlite3 gem on Heroku, remove or replace it with the 'pg' gem"
+      puts "for more information see: https://devcenter.heroku.com/articles/sqlite3"
+      raise "Cannot install sqlite3 gem"
+    end
+  end
+
   # runs bundler to install the dependencies
   def build_bundler
     log("bundle") do
+      raise_on_bad_gems!
       bundle_without = ENV["BUNDLE_WITHOUT"] || "development:test"
       bundle_command = "bundle install --without #{bundle_without} --path vendor/bundle --binstubs vendor/bundle/bin"
 

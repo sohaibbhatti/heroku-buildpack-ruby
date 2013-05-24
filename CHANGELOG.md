@@ -1,3 +1,7 @@
+## Master (unreleased)
+
+* Better error message when `sqlite3` gem is included in `Gemfile`
+
 ## v62 (5/21/2013)
 
 Bugfixes:
