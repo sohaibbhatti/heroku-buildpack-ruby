@@ -57,6 +57,7 @@ class LanguagePack::Ruby < LanguagePack::Base
       "LANG"     => "en_US.UTF-8",
       "PATH"     => default_path,
       "GEM_PATH" => slug_vendor_base,
+      "LD_LIBRARY_PATH" => "/app/vendor/couchbase/lib"
     }
 
     ruby_version_jruby? ? vars.merge({
