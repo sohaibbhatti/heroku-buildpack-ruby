@@ -84,6 +84,7 @@ class LanguagePack::Ruby < LanguagePack::Base
       # install libcouchbase
       install_libcouchbase
       run("cp -R vendor/couchbase /app/vendor/couchbase")
+      install_couchbase_gem
 
       install_language_pack_gems
       build_bundler
