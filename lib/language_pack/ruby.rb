@@ -221,6 +221,7 @@ private
     set_env_override "GEM_PATH", "$HOME/#{slug_vendor_base}:$GEM_PATH"
     set_env_default  "LANG",     "en_US.UTF-8"
     set_env_override "PATH",     "$HOME/bin:$HOME/#{slug_vendor_base}/bin:$PATH"
+    set_env_default  "LD_LIBRARY_PATH", "$LD_LIBRARY_PATH:/app/vendor/couchbase/lib"
 
     if ruby_version_jruby?
       set_env_default "JAVA_OPTS", default_java_opts
