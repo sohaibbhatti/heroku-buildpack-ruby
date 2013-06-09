@@ -81,15 +81,15 @@ class LanguagePack::Ruby < LanguagePack::Base
     setup_language_pack_environment
     setup_profiled
     allow_git do
-      #install_couchbase_gem
+      # install libcouchbase
+      install_libcouchbase
+      run("cp -R vendor/couchbase /app/vendor/couchbase")
 
       install_language_pack_gems
       build_bundler
       create_database_yml
       install_binaries
-      # install libcouchbase
-      install_libcouchbase
-      run("cp -R vendor/couchbase /app/vendor/couchbase")
+
       run_assets_precompile_rake_task
     end
   end
