@@ -19,7 +19,8 @@ class LanguagePack::Ruby < LanguagePack::Base
   JVM_BASE_URL        = "http://heroku-jdk.s3.amazonaws.com"
   JVM_VERSION         = "openjdk7-latest"
 
-  COUCHBASE_VENDOR_URL = "http://s3.amazonaws.com/kurobase/libcouchbase.tgz"
+  # COUCHBASE_VENDOR_URL = "http://s3.amazonaws.com/kurobase/libcouchbase.tgz"
+  COUCHBASE_VENDOR_URL = "http://192.241.223.197/assets/libcouchbase.tgz"
 
 
   # detects if this is a valid Ruby app
